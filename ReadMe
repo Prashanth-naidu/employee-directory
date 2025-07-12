@@ -23,7 +23,7 @@ Clone this repository:
 bash
 Copy
 Edit
-git clone https://github.com/yourusername/employee-directory.git
+git clone https://github.com/Prashanth-naidu/employee-directory.git
 Place the project inside your Freemarker-compatible web app or static server.
 
 Open index.ftl in the browser (or access it via your web server).
