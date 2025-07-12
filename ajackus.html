@@ -1,0 +1,113 @@
+<!-- employee-directory.ftl -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Directory</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header class="header">
+        <h1>Employee Directory</h1>
+        <input type="text" id="searchInput" placeholder="Search by name or email" />
+        <button onclick="toggleFilterSidebar()">Filter</button>
+    </header>
+
+    <div class="controls">
+        <label for="sort">Sort:</label>
+        <select id="sort" onchange="sortEmployees()">
+            <option value="">--Select--</option>
+            <option value="firstName">First Name</option>
+            <option value="department">Department</option>
+        </select>
+
+        <label for="pageSize">Show:</label>
+        <select id="pageSize" onchange="changePageSize()">
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+        </select>
+
+        <button class="add-btn" onclick="openForm()">Add Employee</button>
+    </div>
+
+    <!-- Filter Sidebar -->
+    <aside id="filterSidebar" class="hidden">
+        <h3>Filter Employees</h3>
+        <label>First Name:</label>
+        <input type="text" id="filterFirstName" />
+
+        <label>Department:</label>
+        <input type="text" id="filterDepartment" />
+
+        <label>Role:</label>
+        <input type="text" id="filterRole" />
+
+        <div class="filter-actions">
+            <button onclick="applyFilters()">Apply</button>
+            <button onclick="resetFilters()">Reset</button>
+        </div>
+    </aside>
+
+    <!-- Employee Cards -->
+    <main id="employeeContainer" class="employee-container">
+        <#list employees as employee>
+            <div class="employee-card" data-id="${employee.id}">
+                <p><strong>${employee.firstName} ${employee.lastName}</strong></p>
+                <p><strong>Email:</strong> ${employee.email}</p>
+                <p><strong>Department:</strong> ${employee.department}</p>
+                <p><strong>Role:</strong> ${employee.role}</p>
+                <div class="card-actions">
+                    <button onclick="editEmployee(${employee.id})">Edit</button>
+                    <button onclick="deleteEmployee(${employee.id})">Delete</button>
+                </div>
+            </div>
+        </#list>
+    </main>
+
+    <!-- Add/Edit Form Modal -->
+    <div id="employeeForm" class="modal hidden">
+        <form id="empForm" onsubmit="submitForm(event)">
+            <h2 id="formTitle">Add Employee</h2>
+            <input type="hidden" id="empId" />
+
+            <label>First Name:</label>
+            <input type="text" id="firstName" required />
+
+            <label>Last Name:</label>
+            <input type="text" id="lastName" required />
+
+            <label>Email:</label>
+            <input type="email" id="email" required />
+
+            <label>Department:</label>
+            <select id="department" required>
+                <option value="">Select</option>
+                <option value="HR">HR</option>
+                <option value="IT">IT</option>
+                <option value="Finance">Finance</option>
+            </select>
+
+            <label>Role:</label>
+            <select id="role" required>
+                <option value="">Select</option>
+                <option value="Manager">Manager</option>
+                <option value="Developer">Developer</option>
+                <option value="Analyst">Analyst</option>
+            </select>
+
+            <div class="form-buttons">
+                <button type="submit">Save</button>
+                <button type="button" onclick="closeForm()">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

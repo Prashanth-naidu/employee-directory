@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f9f9f9;
+}
+
+.header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.header input {
+    padding: 5px;
+    font-size: 14px;
+    width: 250px;
+}
+
+.controls {
+    display: flex;
+    gap: 15px;
+    padding: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.add-btn {
+    background-color: green;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.employee-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 15px;
+}
+
+.employee-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 250px;
+}
+
+.card-actions {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-actions button {
+    padding: 5px 10px;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal form {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.hidden {
+    display: none;
+}
+
+#filterSidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #f1f1f1;
+    padding: 20px;
+    width: 250px;
+    height: 100%;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.filter-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+@media (max-width: 768px) {
+    .employee-container {
+        justify-content: center;
+    }
+
+    .header,
+    .controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .header input {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
