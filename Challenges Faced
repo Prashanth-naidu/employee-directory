@@ -1,0 +1,5 @@
+Implementing pagination while keeping search/filter/sort states intact.
+
+Managing form state and edits without any framework or data binding library.
+
+Ensuring mobile responsiveness with clean CSS while avoiding external CSS libraries.
