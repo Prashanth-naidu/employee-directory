@@ -1,0 +1,77 @@
+🧑‍💼 Employee Directory - Frontend Project
+A responsive, interactive, and vanilla JavaScript-powered Employee Directory web interface built using HTML, CSS, JavaScript, and Freemarker templates. This project was designed to demonstrate front-end development skills without backend dependencies.
+
+🚀 Setup & Run Instructions
+📁 Folder Structure
+arduino
+Copy
+Edit
+employee-directory/
+├── index.ftl
+├── styles.css
+├── script.js
+├── assets/ (optional: for images/icons)
+└── README.md
+✅ Requirements
+A basic Freemarker setup (via Spring Boot or embedded server)
+
+Modern web browser (no build tools needed)
+
+🔧 To Run:
+Clone this repository:
+
+bash
+Copy
+Edit
+git clone https://github.com/yourusername/employee-directory.git
+Place the project inside your Freemarker-compatible web app or static server.
+
+Open index.ftl in the browser (or access it via your web server).
+
+All data is handled locally in-memory — no backend is needed.
+
+🧩 Project Features
+💻 Dashboard Page
+Displays employee cards in a responsive grid layout.
+
+Each card shows: Name, Email, Department, Role
+
+Includes Edit and Delete buttons for each employee.
+
+➕ Add/Edit Employee
+A dynamic form (modal) with:
+
+First Name, Last Name, Email, Department, Role
+
+Validations for required fields and email format
+
+Edit pre-fills the form.
+
+Cancel closes the modal without saving.
+
+🔍 Filter / Sort / Search
+Filter sidebar:
+
+Filter by First Name, Department, Role
+
+Top bar:
+
+Search by name or email (case-insensitive)
+
+Sort dropdown by First Name or Department
+
+📄 Pagination
+Choose items per page: 10, 25, 50, 100
+
+Dynamically renders page buttons
+
+Reset on filtering, searching, or sorting
+
+📱 Responsive Design
+Fully responsive layout
+
+Mobile-first design
+
+Smooth layout scaling from mobile to desktop
+
+should i add as it is in readme
